@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLGhepThan" Class="DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-HB480T7;Initial Catalog=QLGhepThan;Integrated Security=True" SettingsObjectName="QLXNGhepThan.Properties.Settings" SettingsPropertyName="QLGhepThanConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DangkyXN" Member="DangkyXNs">
+    <Type Name="DangkyXN">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenBN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LoaiXN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgayXN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiXetNghiem" Member="LoaiXetNghiems">
+    <Type Name="LoaiXetNghiem">
+      <Column Name="IDLoaiXN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenXN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThoiHan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="LoaiXetNghiem_XetNghiem" Member="XetNghiems" ThisKey="IDLoaiXN" OtherKey="IDLoaiXN" Type="XetNghiem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BenhNhan" Member="BenhNhans">
+    <Type Name="BenhNhan">
+      <Column Name="MaBN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenBN" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NamSinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NgayXN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="BenhNhan_HenXN" Member="HenXNs" ThisKey="MaBN" OtherKey="MaBN" Type="HenXN" />
+      <Association Name="BenhNhan_XetNghiem" Member="XetNghiems" ThisKey="MaBN" OtherKey="MaBN" Type="XetNghiem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HenXN" Member="HenXNs">
+    <Type Name="HenXN">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenBN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgayXN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LoaiXN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaBN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDLoaiXN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThoiHanXN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BenhNhan_HenXN" Member="BenhNhan" ThisKey="MaBN" OtherKey="MaBN" Type="BenhNhan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.XetNghiem" Member="XetNghiems">
+    <Type Name="XetNghiem">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenXN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgayXN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KetQua" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MaBN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDLoaiXN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLanXN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Thoihan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="BenhNhan_XetNghiem" Member="BenhNhan" ThisKey="MaBN" OtherKey="MaBN" Type="BenhNhan" IsForeignKey="true" />
+      <Association Name="LoaiXetNghiem_XetNghiem" Member="LoaiXetNghiem" ThisKey="IDLoaiXN" OtherKey="IDLoaiXN" Type="LoaiXetNghiem" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

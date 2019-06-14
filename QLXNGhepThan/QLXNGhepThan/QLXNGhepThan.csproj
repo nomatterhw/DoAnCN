@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{624B5CF6-3D4C-4693-BBDC-FD5E2D89C688}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLXNGhepThan</RootNamespace>
+    <AssemblyName>QLXNGhepThan</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUL\BenhNhanBUL.cs" />
+    <Compile Include="BUL\HenXetNghiemBUL.cs" />
+    <Compile Include="BUL\LoaiXetNghiemBUL.cs" />
+    <Compile Include="BUL\XetNghiemBUL.cs" />
+    <Compile Include="DAL\DAL.cs" />
+    <Compile Include="DB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QLGhepThanDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLGhepThanDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_AddXnTuLichHen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_AddXnTuLichHen.Designer.cs">
+      <DependentUpon>frm_AddXnTuLichHen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_DachSachHenXN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_DachSachHenXN.Designer.cs">
+      <DependentUpon>frm_DachSachHenXN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_DSVB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_DSVB.Designer.cs">
+      <DependentUpon>frm_DSVB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_HenLamXN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_HenLamXN.Designer.cs">
+      <DependentUpon>frm_HenLamXN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_HoSoBenhAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_HoSoBenhAn.Designer.cs">
+      <DependentUpon>frm_HoSoBenhAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_LoaiXN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_LoaiXN.Designer.cs">
+      <DependentUpon>frm_LoaiXN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_login.Designer.cs">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_NganKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_NganKe.Designer.cs">
+      <DependentUpon>frm_NganKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_ShowImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_ShowImage.Designer.cs">
+      <DependentUpon>frm_ShowImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_UpdateXN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_UpdateXN.Designer.cs">
+      <DependentUpon>frm_UpdateXN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_XN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_XN.Designer.cs">
+      <DependentUpon>frm_XN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_QLBN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_QLBN.Designer.cs">
+      <DependentUpon>frm_QLBN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_AddBN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_AddBN.Designer.cs">
+      <DependentUpon>frm_AddBN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frm_addXN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_addXN.Designer.cs">
+      <DependentUpon>frm_addXN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\frm_KeNgan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frm_KeNgan.Designer.cs">
+      <DependentUpon>frm_KeNgan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QLHS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QLHS.Designer.cs">
+      <DependentUpon>QLHS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\register.Designer.cs">
+      <DependentUpon>register.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\frm_AddXnTuLichHen.resx">
+      <DependentUpon>frm_AddXnTuLichHen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_DachSachHenXN.resx">
+      <DependentUpon>frm_DachSachHenXN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_DSVB.resx">
+      <DependentUpon>frm_DSVB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_HenLamXN.resx">
+      <DependentUpon>frm_HenLamXN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_HoSoBenhAn.resx">
+      <DependentUpon>frm_HoSoBenhAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_KeNgan.resx">
+      <DependentUpon>frm_KeNgan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_LoaiXN.resx">
+      <DependentUpon>frm_LoaiXN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_login.resx">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_NganKe.resx">
+      <DependentUpon>frm_NganKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_ShowImage.resx">
+      <DependentUpon>frm_ShowImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_UpdateXN.resx">
+      <DependentUpon>frm_UpdateXN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_XN.resx">
+      <DependentUpon>frm_XN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_QLBN.resx">
+      <DependentUpon>frm_QLBN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_AddBN.resx">
+      <DependentUpon>frm_AddBN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frm_addXN.resx">
+      <DependentUpon>frm_addXN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QLHS.resx">
+      <DependentUpon>QLHS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\register.resx">
+      <DependentUpon>register.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="DB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB.dbml.layout">
+      <DependentUpon>DB.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MetroFramework.txt" />
+    <None Include="QLGhepThanDataSet.xsc">
+      <DependentUpon>QLGhepThanDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLGhepThanDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLGhepThanDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLGhepThanDataSet.xss">
+      <DependentUpon>QLGhepThanDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\iconExcel.ico" />
+    <None Include="Resources\iconADD.ico" />
+    <None Include="Resources\iconSearch.ico" />
+    <None Include="Resources\iconOpenFile.ico" />
+    <None Include="Resources\iconSave.ico" />
+    <None Include="Resources\no-image-icon-23485.png" />
+    <None Include="Resources\iconDanhMucXN.ico" />
+    <None Include="Resources\iconHenKham.ico" />
+    <None Include="Resources\iconDangky.ico" />
+    <None Include="Resources\iconXN.ico" />
+    <None Include="Resources\iconUpdate.ico" />
+    <None Include="Resources\iconDelBN.ico" />
+    <None Include="Resources\icoAddBN.ico" />
+    <None Include="Resources\iconReload.ico" />
+    <None Include="Resources\Hopstarter-Soft-Scraps-Button-Refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
